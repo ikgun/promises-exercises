@@ -5,9 +5,7 @@
  * @returns {Promise<3>}
  */
 function makePromiseResolveWith3() {
-  let promise = new Promise(function (resolve, reject) {
-    return resolve(3);
-  });
+  const promise = new Promise.resolve(3);
 }
 
 /**
