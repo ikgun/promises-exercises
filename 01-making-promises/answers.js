@@ -45,6 +45,7 @@ function makePromiseWithConstructor(itShouldResolve) {
  */
 function makeDelayPromise(value, delayInMs) {
   /* Return a promise that resolves with the value after delayInMs */
+  return new Promise.resolve(setTimeout(() => value, delayInMs));
 }
 
 module.exports = {
