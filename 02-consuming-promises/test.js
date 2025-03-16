@@ -24,6 +24,7 @@ describe('Consuming Promises with .then(cb) and .catch(cb)', () => {
       waitForPromise(delayPromise, action);
     });
   });
+  
   describe('#consumePromise(promise, consumer, errorHandler) => void', () => {
     it('calls the consumer on the resolve value of the promise', (done) => {
       const resolvedPromise = Promise.resolve('Yay!');
