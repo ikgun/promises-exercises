@@ -6,6 +6,7 @@ const {
   makePromiseWithConstructor,
   makeDelayPromise,
 } = require('./answers');
+
 describe('Promise.resolve: (val:T) => Promise<T>', () => {
   describe('#makePromiseResolveWith3:() => Promise<number>', () => {
     it('creates a resolving promise', () => {
@@ -42,6 +43,7 @@ describe('Promise constructor "new Promise((resolve, reject) => void) => Promise
         }, () => {});
     });
   });
+  
   describe('#makeDelayPromise: (A, number) => Promise<A>', () =>{
     it('returns a promise that resolves with the value', () => {
       const start = new Date();

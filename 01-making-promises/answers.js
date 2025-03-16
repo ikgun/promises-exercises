@@ -6,6 +6,7 @@
  */
 function makePromiseResolveWith3() {
   const promise = Promise.resolve(3);
+  return promise;
 }
 
 /**
@@ -15,7 +16,8 @@ function makePromiseResolveWith3() {
  * @returns {Promise<,"Boo!">}
  */
 function makePromiseRejectWithBoo() {
-  const promise = Promise.reject(new Error("Boo!"));
+  const promise = Promise.reject("Boo!");
+  return promise;
 }
 
 /**
@@ -45,7 +47,10 @@ function makePromiseWithConstructor(itShouldResolve) {
  */
 function makeDelayPromise(value, delayInMs) {
   /* Return a promise that resolves with the value after delayInMs */
-  return new Promise.resolve(setTimeout(() => value, delayInMs));
+  return new Promise((resolve, reject) => {
+    if (typeof delayInMs !== "number" || delayInMs < 0) reject("Error");
+    setTimeout(() => resolve(value), delayInMs);
+  });
 }
 
 module.exports = {
