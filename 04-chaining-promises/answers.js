@@ -27,7 +27,13 @@ function flatMapPromise(promise, asyncTransformer) {
  * @param {function} slowAsyncProcess
  */
 function chainTwoAsyncProcesses(firstPromise, slowAsyncProcess) {
-  return firstPromise.then(/* IMPLEMENT ME! */);
+  return firstPromise.then((value) => {
+    try {
+      return Promise.resolve(slowAsyncProcess(value));
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  });
 }
 
 /**

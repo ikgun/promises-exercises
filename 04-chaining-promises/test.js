@@ -66,6 +66,7 @@ describe('Chaining Promises with .then(cb) and .catch(cb)', () => {
         });
     });
   });
+  
   describe('#makeGetUserByIdWithOrganization(getUserById, getOrganizationById) => (id) => Promise', () => {
     const users = {
       'u001': {id: 'u001', name: 'Jeff', email: 'jeff@jeff.jeff', organizationId: 'o001'},
