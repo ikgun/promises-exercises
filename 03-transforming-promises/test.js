@@ -68,6 +68,7 @@ describe('Transforming Promises with .then(cb) and .catch(cb)', () => {
         });
     });
   });
+  
   describe('#squarePromiseOrZero(promise) => Promise', () => {
     it('squares the resolution value of the promise', () => {
       return squarePromiseOrZero(Promise.resolve(5))
